@@ -7,8 +7,8 @@
     { "src": "*.go", "use": "@now/go" }
   ],
   "routes": [
-    { "src": "user/(?<id>[0-9]*)", "methods": ["POST"], "dest":"new-user.go?id=$id" },
-    { "src": "user/", "methods": ["GET"], "dest":"all-users.go" },
+    { "src": "users/", "methods": ["GET"], "dest":"all-user.go" },
+    { "src": "user/new", "methods": ["POST"], "dest":"new-users.go" },
     { "src": "/", "methods": ["GET"], "dest":"/" }
   ]
 }
