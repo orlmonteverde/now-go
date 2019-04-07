@@ -1,4 +1,6 @@
-{ "name": "now-test",
+{
+  "name": "now-test",
+  "alias": "now-test-golang-2019.now.sh",
   "version": 2,
   "env": {
     "SECRET": "my secret"
@@ -7,8 +9,8 @@
     { "src": "*.go", "use": "@now/go" }
   ],
   "routes": [
-    { "src": "users/", "methods": ["GET"], "dest":"all-user.go" },
-    { "src": "user/new", "methods": ["POST"], "dest":"new-users.go" },
-    { "src": "/", "methods": ["GET"], "dest":"/" }
+    { "src": "/", "dest": "/", "methods": ["GET"] },
+    { "src": "/users", "dest": "/all-user.go", "methods": ["GET"] },
+    { "src": "/users/new", "dest": "/new-users.go", "methods": ["POST"] }
   ]
 }
