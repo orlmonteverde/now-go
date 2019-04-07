@@ -8,6 +8,7 @@
   ],
   "routes": [
     { "src": "user/(?<id>[0-9]*)", "methods": ["POST"], "dest":"user-post-handler.go?id=$id" },
-    { "src": "user/", "methods": ["GET"], "dest":"user-get-handler.go" }
+    { "src": "user/", "methods": ["GET"], "dest":"user-get-handler.go" },
+    { "src": "/", "methods": ["GET"], "dest":"/" },
   ]
 }
