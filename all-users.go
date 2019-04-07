@@ -7,14 +7,14 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	var u user.User
-	err := json.NewDecoder(r.Body).Decode(&u)
+	users := user.GetAll()
+	j, err := json.Marshal(users)
 	if err != nil {
-		http.Error(w, "Failed json parse", http.StatusBadRequest)
+		http.Error(w, "Failed json parse", http.StatusInternalServerError)
+		return
 	}
 
-	user.Create(u)
-
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("OK"))
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(j)
 }
