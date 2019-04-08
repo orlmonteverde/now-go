@@ -17,6 +17,15 @@ func GetAll() []User {
 	return userStorage
 }
 
+func GetOne(id int) User {
+	for i, u := range userStorage {
+		if id == i {
+			return u
+		}
+	}
+	return User{}
+}
+
 func Create(u ...User) {
 	userStorage = append(userStorage, u...)
 }
