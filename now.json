@@ -9,9 +9,9 @@
     { "src": "*.go", "use": "@now/go" }
   ],
   "routes": [
-    { "src": "/users/new", "dest": "/new-users.go", "methods": ["POST"] },
+    { "src": "/users/new", "dest": "/new-user.go", "methods": ["POST"] },
     { "src": "/users/(?<id>[0-9]+)", "dest": "/one-user.go?id=$id", "methods": ["GET"] },
-    { "src": "/users", "dest": "/all-user.go", "methods": ["GET"] },
+    { "src": "/users", "dest": "/all-users.go", "methods": ["GET"] },
     { "src": "/", "dest": "/", "methods": ["GET"] }
   ]
 }
